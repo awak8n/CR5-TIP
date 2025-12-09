@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карточки животных - API</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-paw"></i> Карточки животных</h1>
+            <p>REST API для управления карточками животных</p>
+        </header>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <h3><i class="fas fa-server"></i> Статус сервера</h3>
+                <p id="status">Проверка...</p>
+            </div>
+            <div class="stat-card">
+                <h3><i class="fas fa-database"></i> Всего животных</h3>
+                <p id="total-animals">Загрузка...</p>
+            </div>
+        </div>
+        
+        <section class="api-section">
+            <h2><i class="fas fa-code"></i> Доступные API Endpoints</h2>
+            
+            <div class="endpoints">
+                <div class="endpoint get">
+                    <div class="method">GET</div>
+                    <div class="path">/api/animals</div>
+                    <div class="desc">Получить всех животных</div>
+                    <button onclick="fetchAnimals()">Тестировать</button>
+                </div>
+                
+                <div class="endpoint get">
+                    <div class="method">GET</div>
+                    <div class="path">/api/animals/search?species=...</div>
+                    <div class="desc">Поиск животных</div>
+                    <button onclick="searchAnimals()">Тестировать</button>
+                </div>
+                
+                <div class="endpoint post">
+                    <div class="method">POST</div>
+                    <div class="path">/api/animals</div>
+                    <div class="desc">Добавить животное</div>
+                    <button onclick="addAnimal()">Тестировать</button>
+                </div>
+                
+                <div class="endpoint put">
+                    <div class="method">PUT</div>
+                    <div class="path">/api/animals/:id</div>
+                    <div class="desc">Обновить животное</div>
+                    <button onclick="updateAnimal()">Тестировать</button>
+                </div>
+                
+                <div class="endpoint delete">
+                    <div class="method">DELETE</div>
+                    <div class="path">/api/animals/:id</div>
+                    <div class="desc">Удалить животное</div>
+                    <button onclick="deleteAnimal()">Тестировать</button>
+                </div>
+            </div>
+        </section>
+        
+        <section class="data-section">
+            <h2><i class="fas fa-list"></i> Данные животных</h2>
+            <div id="animals-container" class="animals-container">
+                <p>Данные загружаются...</p>
+            </div>
+        </section>
+        
+        <section class="console-section">
+            <h2><i class="fas fa-terminal"></i> Консоль ответов</h2>
+            <pre id="response-console">Ждите ответы от сервера...</pre>
+        </section>
+        
+        <footer>
+            <p>Контрольная работа №5 - Карточки животных</p>
+            <p>Express.js API с полным CRUD функционалом</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
