@@ -1,0 +1,19 @@
+# Виртуальное окружение
+venv/
+.venv/
+env/
+
+# Кэш и байт-код Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Файлы IDE
+.idea/
+.vscode/
+
+# Файлы pytest
+.pytest_cache/
+
+# Системные файлы
+.DS_Store
